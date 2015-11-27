@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+ 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>College student data</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="highcharts.js"></script>
+<script src="exporting.js"></script>
+<script src="offline-exporting.js"></script>
+    <script type="text/javascript">
+  
+    
+    
+    $(document).ready(function() 
+    			{
+    
+    	
+
+           
+                 
+                 // 2 to display other types of charts for same data 
+                 $("#type1").change(function()
+                		    {
+                		       giveJSON($("#type1").val(),$("#type2").val());
+                		    });  
+                 
+                 // end
+                 
+                 
+                 //3
+                    $("#type2").change(function()
+                		    {
+                    	  giveJSON($("#type1").val(),$("#type2").val());
+                    	
+                    	
+                		    });  
+                 
+			
+        });//doc end
+        
+        function loadchart(gdata,typeofchart,typeoftickets) {
+        	
+   
+         
+               $('#container').highcharts({
+            	   
+            	   exporting: {
+                       chartOptions: { // specific options for the exported image
+                           plotOptions: {
+                               series: {
+                                   dataLabels: {
+                                       enabled: true
+                                   }
+                               }
+                           }
+                       },
+                       
+                       fallbackToExportServer: false
+                   },
+            	   
+               chart: {
+                   type: typeofchart
+               },
+               title: {
+                   text: typeoftickets+" Tickets(Weekly)"
+               },
+               xAxis: {
+                   allowDecimals: false,
+                   title: {
+                       text: "Day Of Week "
+                   }
+               },
+               yAxis: {
+                   title: {
+                       text: "Number of Tickets "
+                   }
+               },
+               
+               
+               series: [{
+                   data: gdata
+               }],
+               
+           
+               
+           }); 
+               
+       
+			
+	
+        }
+        
+        
+        //give processed JSON
+        
+         function giveJSON(type1,type2) {
+        	
+        	
+        	
+        	 var processed_json = new Array();   
+             var typeofchart= type1;
+           	var typeoftickets=type2;	       
+           
+             $.ajax({
+            		
+ 			 
+ 			  url :"/WSR/DataSupply?key1="+typeoftickets,
+ 		        dataType : 'json',
+ 		     
+ 		        
+ 		        
+ 		        error : function(ts) {
+
+ 		          alert("ERROR WHILE GETTING DATA");
+ 		          
+ 		        },
+ 		        
+ 		        success : function(data) {
+
+ 		        	
+ 		        	 for (i in data) {
+ 		        		
+ 		        		        for (key in data[i]) {
+ 		        	
+ 		        		            processed_json.push([data[i][key].key, parseInt(data[i][key].value)]);
+ 		        		           
+ 		        		            
+ 		        		        }
+ 		        		     
+ 		        		    }
+ 		        
+ 		        	  loadchart(processed_json,typeofchart,typeoftickets);
+
+ 			}
+ 		        
+ 		        
+        });
+        
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+
+
+<div>
+<label for="type1">Type of Chart </label>
+
+<select id="type1">
+<option>pie</option>
+<option>bar</option>
+<option>column</option>
+<option>line</option>
+<option>scatter</option>
+
+</select>
+<label for="type2">Type of Ticket </label>
+<select id="type2">
+
+<option>Open</option>
+<option>Closed</option>
+<option>Resolved</option>
+
+</select>
+
+</div>
+
+    <div id="container" style="height: 400px"></div>
+</body>
+</html>

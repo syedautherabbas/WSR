@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>College student data</title>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="highcharts.js"></script>
+    <script src="highcharts-3d.js"></script>
+     <script src="jquery.dynatable.js"></script>
+    <script type="text/javascript">
+  
+    
+    $('#my-ajax-table').dynatable({
+    	  dataset: {
+    	    ajax: true,
+    	    ajaxUrl: 'http://localhost:8080/A/rest/getinfo',
+    	    ajaxOnLoad: true,
+    	    records: []
+    	  }
+    	});
+    
+    </script>
+
+</head>
+<body>
+
+    <div id="my-ajax-table" ></div>
+</body>
+</html>

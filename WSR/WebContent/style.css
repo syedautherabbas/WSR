@@ -1,0 +1,177 @@
+
+
+body
+{
+	line-height: 1.6em;
+	margin-left: 100px;
+}
+
+
+.deletebut{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 14px;
+	background: #fff;
+	
+	
+}
+
+#Title
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 20px;
+	margin-left: 50px;
+	width: 480px;
+	text-align: center;
+	border-right: 10px solid #aabcfe;
+	border-left: 10px solid #aabcfe;
+	background:  #cdcdee;
+	
+	
+	
+}
+
+#maintabmid{
+		margin-left: 350px;
+}
+
+#ver-minimalist
+{
+	  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+  margin-left: 250px;
+	margin-top:10px;
+}
+#ver-minimalist th
+{
+  background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+}
+#ver-minimalist td
+{
+	
+    padding: 10px 20px;
+     text-align: center;
+}
+
+#ver-minimalist tr:nth-child(even) {
+	background:#CCFFCC;
+	    color: rgb(111, 111, 111);
+	}
+#ver-minimalist tr:nth-child(odd) {
+background:#E0E0E0;
+	    color: rgb(111, 111, 111);
+	}
+	
+	#ver-minimalist tr:nth-last-child(-n+1) {
+background:#756e77;
+	    color: rgb(999, 111, 111);
+	}
+
+#ver-minimalist tr:nth-last-child(1) {
+background:#756e77;
+	    color: rgb(999, 111, 111);
+	}
+
+
+
+#nolastrow
+{
+	  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+  margin-left: 250px;
+	margin-top:10px;
+}
+#nolastrow th
+{
+  background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+}
+#nolastrow td
+{
+	
+    padding: 10px 20px;
+     text-align: center;
+}
+
+#nolastrow tr:nth-child(even) {
+	background:#CCFFCC;
+	    color: rgb(111, 111, 111);
+	}
+#nolastrow tr:nth-child(odd) {
+background:#E0E0E0;
+	    color: rgb(111, 111, 111);
+	}
+	
+	#nolastrow tr:nth-last-child(-n+1) {
+
+	}
+
+#nolastrow tr:nth-last-child(1) {
+
+	}
+	
+	
+	
+#statusrepleft
+{
+	  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+  margin-left: 0px;
+	margin-top:10px;
+}
+#statusrepleft th
+{
+  background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 5px 5px;
+    text-align: center;
+}
+#statusrepleft td
+{
+	
+    padding: 5px 5px;
+     text-align: center;
+}
+
+#statusrepleft tr:nth-child(even) {
+	background:#CCFFCC;
+	    color: rgb(111, 111, 111);
+	}
+#statusrepleft tr:nth-child(odd) {
+background:#E0E0E0;
+	    color: rgb(111, 111, 111);
+	}
+	
+	#statusrepleft tr:nth-last-child(-n+1) {
+background:#756e77;
+	    color: rgb(999, 111, 111);
+	}
+
+#statusrepleft tr:nth-last-child(1) {
+background:#756e77;
+	    color: rgb(999, 111, 111);
+	}
+
+
+
+
+}
