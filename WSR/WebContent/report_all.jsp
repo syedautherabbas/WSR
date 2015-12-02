@@ -47,27 +47,27 @@
 			%>
     
     
-    	 var b="<%=track%>";
+    	 var track="<%=track%>";
     	
-    	 var d="<%=sdate%>";
-    	 var e="<%=edate%>";
+    	 var startdate="<%=sdate%>";
+    	 var enddate="<%=edate%>";
    
     	
-						giveJSON("column", b,"priority",d,e,"#priority");
-						giveJSON("column", b,"prioritynew",d,e,"#prioritynew");-
-						giveJSON("column", b,"priorityopen",d,e,"#priorityopen");
-						giveJSON("column", b,"priorityclose",d,e,"#priorityclose");
-						giveJSON("column", b,"prioritymonthly",d,e,"#prioritymonthly");
-						giveJSON("column", b,"prioritymonthlyopen",d,e,"#prioritymonthlyopen");
-						giveJSON("column", b,"prioritymonthlyclose",d,e,"#prioritymonthlyclose");
-						giveJSON("column", b,"priorityweekly",d,e,"#priorityweekly");
-						giveJSON("column", b,"priorityweeklyopen",d,e,"#priorityweeklyopen");
-						giveJSON("column", b,"priorityweeklyclose",d,e,"#priorityweeklyclose");
-						giveJSON("column", b,"status",d,e,"#status");
-						giveJSON("column", b,"statusmonthly",d,e,"#statusmonthly");
-						giveJSON("column", b,"statusweekly",d,e,"#statusweekly");
-						giveJSON("column", b,"ticketageopen",d,e,"#ticketageopen");
-						giveJSON("column", b,"ticketageclose",d,e,"#ticketageclose");
+						giveJSON("column", track,"priority",startdate,enddate,"#priority");
+						giveJSON("column", track,"prioritynew",startdate,enddate,"#prioritynew");-
+						giveJSON("column", track,"priorityopen",startdate,enddate,"#priorityopen");
+						giveJSON("column", track,"priorityclose",startdate,enddate,"#priorityclose");
+						giveJSON("column", track,"prioritymonthly",startdate,enddate,"#prioritymonthly");
+						giveJSON("column", track,"prioritymonthlyopen",startdate,enddate,"#prioritymonthlyopen");
+						giveJSON("column", track,"prioritymonthlyclose",startdate,enddate,"#prioritymonthlyclose");
+						giveJSON("column", track,"priorityweekly",startdate,enddate,"#priorityweekly");
+						giveJSON("column", track,"priorityweeklyopen",startdate,enddate,"#priorityweeklyopen");
+						giveJSON("column", track,"priorityweeklyclose",startdate,enddate,"#priorityweeklyclose");
+						giveJSON("column", track,"status",startdate,enddate,"#status");
+						giveJSON("column", track,"statusmonthly",startdate,enddate,"#statusmonthly");
+						giveJSON("column", track,"statusweekly",startdate,enddate,"#statusweekly");
+						giveJSON("column", track,"ticketageopen",startdate,enddate,"#ticketageopen");
+						giveJSON("column", track,"ticketageclose",startdate,enddate,"#ticketageclose");
 						
 						
 						
@@ -80,7 +80,7 @@
 						
 							var t1="#"+$(this).attr('name');
 							//alert($(this).val()+b+$(this).attr('name')+d+e+"#"+$(this).attr('name'));
-							giveJSON($(this).val(),b,$(this).attr('name'),d,e,t1);
+							giveJSON($(this).val(),track,$(this).attr('name'),startdate,enddate,t1);
 							t1=null;
 							 
 						});
@@ -158,11 +158,7 @@
 											"data" : gdata[i][key].data,
 											"type":gdata[i][key].type,
 											"color":gdata[i][key].color
-											
-											
-											
-											
-										})
+											})
 										
 										
 									
@@ -362,8 +358,8 @@ else if(reporttype=="prioritynew")
 	<div align="Center">
 		<table>
 			<tr>
-				<td colspan="5">Track: <%= track %><br> Start Date: <%= sdate %>
-					<br> End Date: <%= edate %><br>
+				<h2><td colspan="5">Track: <%= track %><br> Start Date: <%= sdate %>
+					<br> End Date: <%= edate %><br> </h2>
 				</td>
 			</tr>
 		</table>
@@ -446,11 +442,10 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Monthly</h2>
-				</td>
-			</tr>
+		<caption>
+				<h2>Report Structure – By Application / Priority Monthly</h2>
+			</caption>
+		
 		<%  counter=1;
        					for(BarebonePJ temp:listPriorityMonthly)
 						{
@@ -508,11 +503,10 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Weekly</h2>
-				</td>
-			</tr>
+				<caption>
+				<h2>Report Structure – By Application / Priority Weekly</h2>
+			</caption>
+		
 		<%  counter=1;
        					for(BarebonePJ temp:listPriorityWeekly)
 						{
@@ -570,11 +564,9 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="ver-minimalist">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority New</h2>
-				</td>
-			</tr>
+			<caption>
+				<h2>Report Structure – By Application / Priority New</h2>
+			</caption>
 			<%  counter=1;
        					for(BarebonePJ temp:listPriorityNew)
 						{
@@ -634,11 +626,9 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="ver-minimalist">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Open</h2>
-				</td>
-			</tr>
+			<caption>
+				<h2>Report Structure – By Application / Priority Open</h2>
+			</caption>
 	<%  counter=1;
        					for(BarebonePJ temp:listPriorityOpen)
 						{
@@ -696,11 +686,9 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="ver-minimalist">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Close</h2>
-				</td>
-			</tr>
+			<caption>
+				<h2>Report Structure – By Application / Priority Close</h2>
+			</caption>
 			<%  counter=1;
        					for(BarebonePJ temp:listPriorityClose)
 						{
@@ -757,11 +745,9 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Monthly Open</h2>
-				</td>
-			</tr>
+		<caption>
+				<h2>Report Structure – By Application / Priority Monthly Open</h2>
+			</caption>
 		<%  counter=1;
        					for(BarebonePJ temp:listPriorityMonthlyOpen)
 						{
@@ -817,11 +803,9 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Monthly Close</h2>
-				</td>
-			</tr>
+			<caption>
+				<h2>Report Structure – By Application / Priority Monthly Close</h2>
+			</caption>
 			<%  counter=1;
        					for(BarebonePJ temp:listPriorityMonthlyClose)
 						{
@@ -878,11 +862,11 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Weekly Open</h2>
-				</td>
-			</tr>
+			<caption>
+				<h2>Report Structure – By Application / Priority Weekly Open</h2>
+			</caption>
+					
+			
 			<%  counter=1;
        					for(BarebonePJ temp:listPriorityWeeklyOpen)
 						{
@@ -940,11 +924,9 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Priority Weekly Close</h2>
-				</td>
-			</tr>
+				<caption>
+				<h2>Report Structure – By Application / Priority Weekly Close</h2>
+			</caption>
 			<%  counter=1;
        					for(BarebonePJ temp:listPriorityWeeklyClose)
 						{
@@ -1001,11 +983,11 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="statusrepleft">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Status</h2>
-				</td>
-			</tr>
+		
+				<caption>
+				<h2>Report Structure – By Application / Status</h2>
+			</caption>
+			
 		<%  counter=1;
        					for(BarebonePJ temp:listStatus)
 						{
@@ -1061,11 +1043,10 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Status Monthly</h2>
-				</td>
-			</tr>
+			<caption>
+				<h2>Report Structure – By Application / Status Monthly</h2>
+			</caption>
+			
 		<%  counter=1;
        					for(BarebonePJ temp:listStatusMonthly)
 						{
@@ -1120,11 +1101,10 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="nolastrow">
-			<tr>
-				<td colspan="5">
-					<h2>Report Structure – By Application / Status Weekly</h2>
-				</td>
-			</tr>
+		<caption>
+				<h2>Report Structure – By Application / Status Weekly</h2>
+			</caption>
+			
 		<%  counter=1;
        					for(BarebonePJ temp:listStatusWeekly)
 						{
@@ -1180,11 +1160,12 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="ver-minimalist">
-			<tr>
-				<td colspan="7">
-					<h2>Report Structure – By Application / Ticket Age Open</h2>
-				</td>
-			</tr>
+	
+			<caption>
+				<h2>Report Structure – By Application / Ticket Age Open</h2>
+			</caption>
+			
+			
 			<%  counter=1;
        					for(BarebonePJ temp:listTicketAgeOpen)
 						{
@@ -1244,11 +1225,11 @@ else if(reporttype=="prioritynew")
 		%>
 		<br> <br>
 		<table id="ver-minimalist">
-			<tr>
-				<td colspan="7">
-					<h2>Report Structure – By Application / Ticket Age Resolved</h2>
-				</td>
-			</tr>
+			
+			
+			<caption>
+				<h2>Report Structure – By Application / Ticket Age Resolved</h2>
+			</caption>
 			<%  counter=1;
        					for(BarebonePJ temp:listTicketAgeResolved)
 						{
