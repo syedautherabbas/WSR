@@ -13,7 +13,7 @@ public class Dbconnection {
 		
 		 Connection con=null;
 		   
-		   
+		   //changed my db implementaion from oracle to mysql
 		    // Class.forName("com.mysql.jdbc.Driver");
 		    //con=DriverManager.getConnection("jdbc:mysql://localhost:3306/northwind","syed","135791");
 		 Class.forName("oracle.jdbc.driver.OracleDriver");  
